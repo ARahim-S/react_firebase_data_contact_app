@@ -45,20 +45,16 @@ const ContactForm = ({ info, setInfo, handleFormSubmit }) => {
       alignItems="center"
       spacing={3}
     >
-      <Grid item xs="auto">
-        <h1 className="main-header">Contact App</h1>
-      </Grid>
-      <Grid item xs="auto">
-        <h3 className="second-header">Add Contact</h3>
-      </Grid>
+      <h3 className="main-header">Contact App</h3>
       <Grid item xs="auto">
         <Box
           sx={{
             border: "2px solid black",
-            padding: "4rem",
+            padding: "2rem",
             borderRadius: "1rem",
           }}
         >
+          <p className="second-header">Add Contact</p>
           <form onSubmit={handleFormSubmit}>
             <Stack spacing={3} direction={"column"}>
               <TextField
