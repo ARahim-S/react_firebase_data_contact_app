@@ -1,7 +1,7 @@
 {
   "name": "react_firebase_data_contact_app",
   "version": "0.1.0",
-  "homepage": "https://arahim-s.github.io/react_firebase_data_contact_app",
+  "homepage": "https://arahim-s.github.io/react_firebase_data_contact_app/",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.10.6",
