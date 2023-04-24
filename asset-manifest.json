@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/react_firebase_data_contact_app/static/css/main.f34bf2ed.css",
+    "main.js": "/react_firebase_data_contact_app/static/js/main.b91eac36.js",
+    "index.html": "/react_firebase_data_contact_app/index.html",
+    "main.f34bf2ed.css.map": "/react_firebase_data_contact_app/static/css/main.f34bf2ed.css.map",
+    "main.b91eac36.js.map": "/react_firebase_data_contact_app/static/js/main.b91eac36.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f34bf2ed.css",
+    "static/js/main.b91eac36.js"
+  ]
+}
