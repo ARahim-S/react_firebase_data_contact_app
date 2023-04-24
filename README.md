@@ -1,4 +1,4 @@
-Used firebase realtime database (Crud Operations were implemented)
+Used firebase realtime database (Crud Operations were implemented)<br><br>
 Used Material UI - Icons
 
 # Getting Started with Create React App
