@@ -6,12 +6,15 @@ import {
   MenuItem,
   InputAdornment,
   Button,
+  Select,
+  FormControl,
+  InputLabel,
 } from "@mui/material";
 
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import PhoneEnabledIcon from "@mui/icons-material/PhoneEnabled";
 
-const ContactForm = () => {
+const ContactForm = ({ info, setInfo, handleFormSubmit }) => {
   const genders = [
     {
       value: "Male",
@@ -26,6 +29,13 @@ const ContactForm = () => {
       label: "Other",
     },
   ];
+
+  const handleChange = (e) => {
+    e.preventDefault();
+    const { name, value } = e.target;
+    setInfo({ ...info, [name]: value });
+  };
+
   return (
     <Grid
       className="main-grid"
@@ -49,14 +59,12 @@ const ContactForm = () => {
             borderRadius: "1rem",
           }}
         >
-          <form>
+          <form onSubmit={handleFormSubmit}>
             <Stack spacing={3} direction={"column"}>
               <TextField
                 required
-                variant="outlined"
                 name="username"
                 label="Required"
-                defaultValue="Name"
                 InputProps={{
                   startAdornment: (
                     <InputAdornment position="start">
@@ -64,9 +72,13 @@ const ContactForm = () => {
                     </InputAdornment>
                   ),
                 }}
+                placeholder="Name"
+                value={info.name}
+                onChange={handleChange}
               />
               <TextField
                 required
+                name="phoneNumber"
                 label="Required"
                 defaultValue="457-854-785"
                 InputProps={{
@@ -76,14 +88,25 @@ const ContactForm = () => {
                     </InputAdornment>
                   ),
                 }}
+                value={info.phoneNumber}
+                placeholder="458-578-62-45"
+                onChange={handleChange}
               />
-              <TextField select label="Select" defaultValue="Gender">
-                {genders.map((option) => (
-                  <MenuItem key={option.value} value={option.value}>
-                    {option.label}
-                  </MenuItem>
-                ))}
-              </TextField>
+              <FormControl>
+                <InputLabel>Gender</InputLabel>
+                <Select
+                  name={"gender"}
+                  label="Select"
+                  onChange={handleChange}
+                  required
+                >
+                  {genders.map((option) => (
+                    <MenuItem key={option.value} value={option.value}>
+                      {option.label}
+                    </MenuItem>
+                  ))}
+                </Select>
+              </FormControl>
               <Button variant="contained" type="submit" value="submit">
                 Add Contact
               </Button>
