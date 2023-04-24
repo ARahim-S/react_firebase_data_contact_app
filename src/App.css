@@ -7,3 +7,21 @@
   pointer-events: none;
 }
 
+.main-grid {
+  background-color: beige;
+  padding: 4rem;
+}
+
+.main-header {
+  background-color: bisque;
+  font-weight: bold;
+  padding: 3rem;
+  border-radius: 2rem;
+}
+
+.second-header {
+  background-color: bisque;
+  font-weight: bold;
+  padding: 2rem;
+  border-radius: 1rem;
+}
