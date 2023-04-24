@@ -69,7 +69,7 @@ const ContactForm = ({ info, setInfo, handleFormSubmit }) => {
                   ),
                 }}
                 placeholder="Name"
-                value={info.name}
+                value={info.username}
                 onChange={handleChange}
               />
               <TextField
@@ -95,6 +95,7 @@ const ContactForm = ({ info, setInfo, handleFormSubmit }) => {
                   label="Select"
                   onChange={handleChange}
                   required
+                  value={info.gender}
                 >
                   {genders.map((option) => (
                     <MenuItem key={option.value} value={option.value}>

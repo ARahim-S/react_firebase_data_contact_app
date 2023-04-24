@@ -10,7 +10,7 @@ import Paper from "@mui/material/Paper";
 import DeleteIcon from "@mui/icons-material/Delete";
 import UpgradeIcon from "@mui/icons-material/Upgrade";
 
-const Contacts = () => {
+const Contacts = ({ editHandler }) => {
   const { isLoading, contactList } = useFetch();
   console.log(isLoading, contactList);
   return (
@@ -32,8 +32,8 @@ const Contacts = () => {
               <TableCell align="center">Username</TableCell>
               <TableCell align="center">Phone Number</TableCell>
               <TableCell align="center">Gender</TableCell>
-              <TableCell align="center">Delete</TableCell>
               <TableCell align="center">Update</TableCell>
+              <TableCell align="center">Delete</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -56,17 +56,29 @@ const Contacts = () => {
                   sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                 >
                   <TableCell align="center">{index + 1}</TableCell>
-                  <TableCell align="center">{contact.username}</TableCell>
+                  <TableCell align="center">
+                    {contact.username.toUpperCase()}
+                  </TableCell>
                   <TableCell align="center">{contact.phoneNumber}</TableCell>
                   <TableCell align="center">{contact.gender}</TableCell>
+                  <TableCell align="center">
+                    <UpgradeIcon
+                      sx={{ cursor: "pointer" }}
+                      onClick={() =>
+                        editHandler(
+                          contact.id,
+                          contact.username,
+                          contact.phoneNumber,
+                          contact.gender
+                        )
+                      }
+                    />
+                  </TableCell>
                   <TableCell align="center">
                     <DeleteIcon
                       onClick={() => deleteUser(contact.id)}
                       sx={{ cursor: "pointer" }}
                     />
-                  </TableCell>
-                  <TableCell align="center">
-                    <UpgradeIcon sx={{ cursor: "pointer" }} />
                   </TableCell>
                 </TableRow>
               ))
